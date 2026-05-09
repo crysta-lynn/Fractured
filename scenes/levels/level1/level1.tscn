@@ -1,5 +1,6 @@
 [gd_scene format=4 uid="uid://dttpvtfcobuw1"]
 
+[ext_resource type="Script" uid="uid://dw6jmrt4uyrdc" path="res://scenes/levels/level1/level_1.gd" id="1_3xb12"]
 [ext_resource type="Texture2D" uid="uid://bap86cegl2njv" path="res://assets/tiles/Dead_terrain.png" id="1_14qug"]
 [ext_resource type="PackedScene" uid="uid://dgtnj725par5k" path="res://scenes/goal.tscn" id="2_4g7pb"]
 
@@ -97,6 +98,7 @@ physics_layer_0/collision_layer = 1
 sources/2 = SubResource("TileSetAtlasSource_14qug")
 
 [node name="Node2D" type="Node2D" unique_id=1542735852]
+script = ExtResource("1_3xb12")
 
 [node name="goal" parent="." unique_id=1837643962 instance=ExtResource("2_4g7pb")]
 position = Vector2(2466, 168)
