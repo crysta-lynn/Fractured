@@ -21,7 +21,7 @@ animations = [{
 radius = 31.0
 height = 138.0
 
-[node name="Area2D" type="Area2D" unique_id=1837643962]
+[node name="goal" type="Area2D" unique_id=1837643962]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=166322006]
 sprite_frames = SubResource("SpriteFrames_5yhl6")

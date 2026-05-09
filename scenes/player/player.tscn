@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://cgpqkgygimjs4"]
 
+[ext_resource type="Script" uid="uid://bm1uyo01ouyav" path="res://scenes/player/player.gd" id="1_dovo2"]
 [ext_resource type="Texture2D" uid="uid://kbj7lwqegr7s" path="res://scenes/player/charLiveDisplay.png" id="1_rwm0n"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_14505"]
@@ -43,6 +44,7 @@ radius = 28.0
 height = 156.0
 
 [node name="player" type="CharacterBody2D" unique_id=1333575178]
+script = ExtResource("1_dovo2")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1021652899]
 sprite_frames = SubResource("SpriteFrames_0hrit")
