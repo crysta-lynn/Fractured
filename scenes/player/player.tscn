@@ -45,8 +45,6 @@ height = 156.0
 
 [node name="player" type="CharacterBody2D" unique_id=1333575178]
 script = ExtResource("1_dovo2")
-JUMP_VELOCITY = -1000.0
-GRAVITY_MULTIPLIER = 3.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1021652899]
 sprite_frames = SubResource("SpriteFrames_0hrit")
@@ -56,3 +54,5 @@ position = Vector2(0, 18)
 shape = SubResource("CapsuleShape2D_s027a")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1586667109]
+position_smoothing_enabled = true
+position_smoothing_speed = 20.0
