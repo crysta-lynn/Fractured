@@ -3,9 +3,15 @@ extends CharacterBody2D
 class_name player
 
 @export var SPEED = 300.0
-@export var JUMP_VELOCITY = -400.0
-@export var GRAVITY_MULTIPLIER = 1.0
+@export var JUMP_VELOCITY = -1000.0
+@export var GRAVITY_MULTIPLIER = 3.0
 
+func _ready() -> void:
+	WorldManager.swap.connect(_on_swap)
+
+func _on_swap(is_mirrored):
+	GRAVITY_MULTIPLIER = 1.0 if is_mirrored else 3.0
+	collision_layer = 2 if is_mirrored else 1
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
