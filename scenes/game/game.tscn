@@ -1,0 +1,86 @@
+[gd_scene format=3 uid="uid://b0v7kt1j7e1hv"]
+
+[ext_resource type="Script" uid="uid://c3yf7ovjucko5" path="res://scenes/game/game.gd" id="1_0sr1o"]
+[ext_resource type="PackedScene" uid="uid://dttpvtfcobuw1" path="res://scenes/levels/level1/level_1.tscn" id="2_kelw5"]
+[ext_resource type="PackedScene" uid="uid://cgpqkgygimjs4" path="res://scenes/player/player.tscn" id="3_lfrn8"]
+[ext_resource type="Script" uid="uid://crj1bcmwxi43w" path="res://scenes/game/screen_fade.gd" id="4_kelw5"]
+
+[sub_resource type="Animation" id="Animation_lfrn8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_5i0tg"]
+resource_name = "fade_in"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_kelw5"]
+resource_name = "fade_out"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lfrn8"]
+_data = {
+&"RESET": SubResource("Animation_lfrn8"),
+&"fade_in": SubResource("Animation_5i0tg"),
+&"fade_out": SubResource("Animation_kelw5")
+}
+
+[node name="Game" type="Node2D" unique_id=299915206]
+script = ExtResource("1_0sr1o")
+
+[node name="level1" parent="." unique_id=1542735852 instance=ExtResource("2_kelw5")]
+
+[node name="player" parent="." unique_id=1333575178 instance=ExtResource("3_lfrn8")]
+position = Vector2(382, 780)
+scale = Vector2(0.75, 0.75)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1796999623]
+
+[node name="screenFade" type="Node" parent="CanvasLayer" unique_id=1976946427]
+script = ExtResource("4_kelw5")
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/screenFade" unique_id=2081394451]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/screenFade" unique_id=946012126]
+libraries/ = SubResource("AnimationLibrary_lfrn8")

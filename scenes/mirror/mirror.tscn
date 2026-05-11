@@ -31,5 +31,13 @@ shape = SubResource("RectangleShape2D_85o4s")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=159728852]
 sprite_frames = SubResource("SpriteFrames_3dkp8")
 
+[node name="interactionPrompt" type="Label" parent="." unique_id=768587753]
+visible = false
+offset_left = -27.0
+offset_top = -148.0
+offset_right = 28.0
+offset_bottom = -125.0
+text = "Press E"
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

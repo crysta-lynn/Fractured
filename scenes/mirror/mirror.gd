@@ -7,11 +7,12 @@ func _ready() -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if body is player:
-		print("entered mirror body")
+		$interactionPrompt.visible = true
 		is_player_in_area = true
 
 func _on_body_exited(body: Node2D) -> void:
 	if body is player:
+		$"interactionPrompt".visible = false
 		is_player_in_area = false
 
 func _process(delta: float) -> void:

@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://dttpvtfcobuw1"]
+
+[ext_resource type="PackedScene" uid="uid://1gpqc1gqaqdl" path="res://scenes/levels/level1/rooms/room_01.tscn" id="1_4yi3j"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qybne"]
+size = Vector2(3101, 1691)
+
+[node name="level_1" type="Node2D" unique_id=1542735852]
+
+[node name="room_01" parent="." unique_id=418616573 instance=ExtResource("1_4yi3j")]
+
+[node name="Area2D" type="Area2D" parent="room_01" unique_id=261312536]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="room_01/Area2D" unique_id=1865888465]
+visible = false
+position = Vector2(1327.5, 388.5)
+shape = SubResource("RectangleShape2D_qybne")
