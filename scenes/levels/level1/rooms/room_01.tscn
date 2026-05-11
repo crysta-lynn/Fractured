@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://b4ymksfn6rmis" path="res://assets/tiles/Living_terrain.png" id="4_tkhv7"]
 [ext_resource type="Script" uid="uid://einni8m0nkcs" path="res://utility/syncTileMaps.gd" id="5_l0g8q"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kp36o"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ncqy5"]
 texture = ExtResource("3_sx7cs")
 texture_region_size = Vector2i(50, 50)
 0:0/0 = 0
@@ -98,9 +98,9 @@ texture_region_size = Vector2i(50, 50)
 tile_size = Vector2i(50, 50)
 physics_layer_0/collision_layer = 2
 physics_layer_0/collision_mask = 2
-sources/0 = SubResource("TileSetAtlasSource_kp36o")
+sources/0 = SubResource("TileSetAtlasSource_ncqy5")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gghg3"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7jg3v"]
 texture = ExtResource("4_tkhv7")
 texture_region_size = Vector2i(50, 50)
 4:2/0 = 0
@@ -191,7 +191,10 @@ texture_region_size = Vector2i(50, 50)
 [sub_resource type="TileSet" id="TileSet_irv6j"]
 tile_size = Vector2i(50, 50)
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_gghg3")
+sources/0 = SubResource("TileSetAtlasSource_7jg3v")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sx7cs"]
+size = Vector2(3101, 1691)
 
 [node name="room_01" type="Node2D" unique_id=418616573]
 script = ExtResource("1_7jg3v")
@@ -219,3 +222,10 @@ tile_map_data = PackedByteArray("AAAOABEAAAAEAAIAAAANABEAAAAEAAIAAAAKABEAAAAEAAI
 tile_set = SubResource("TileSet_irv6j")
 script = ExtResource("5_l0g8q")
 mirroredTilemap = NodePath("../../mirrored world/tilemap")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1996176408]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=490294898]
+visible = false
+position = Vector2(1327.5, 388.5)
+shape = SubResource("RectangleShape2D_sx7cs")
