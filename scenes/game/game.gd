@@ -19,3 +19,5 @@ func _on_swap(is_mirrored):
 
 func _ready() -> void:
 	WorldManager.swap.connect(_on_swap)
+	#connect world swap signal,
+	#connect for each room????
