@@ -1,21 +1,13 @@
 extends Node2D
 
-@export var is_mirrored = false
-
-signal swap_world_req(is_mirrored)
+@onready var game = $"../.."
 
 func _ready() -> void:
-	WorldManager.swap.connect(_on_swap)
-	_on_swap(WorldManager.is_mirrored)
+	game.swap_req.connect(_on_swap_req)
+	_on_swap_req()
 
-func _on_swap(is_mirrored):
-	
-	swap_world(is_mirrored)
-	
-
-
-func swap_world(is_mirrored):
-	if is_mirrored:
+func _on_swap_req():
+	if WorldManager.is_mirrored:
 		$"original world".visible = false
 		$"original world".process_mode = Node.PROCESS_MODE_DISABLED
 		
