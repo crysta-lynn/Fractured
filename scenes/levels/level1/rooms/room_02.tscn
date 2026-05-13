@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://bmsrsqb20npv"]
 
 [ext_resource type="Texture2D" uid="uid://bap86cegl2njv" path="res://assets/tiles/Dead_terrain.png" id="1_57mo5"]
+[ext_resource type="Script" uid="uid://dw6jmrt4uyrdc" path="res://scenes/levels/rooms.gd" id="1_fpuds"]
 [ext_resource type="PackedScene" uid="uid://dvwlnur5fvcvj" path="res://scenes/mirror/mirror.tscn" id="1_t25rq"]
 [ext_resource type="Texture2D" uid="uid://b4ymksfn6rmis" path="res://assets/tiles/Living_terrain.png" id="2_t25rq"]
 [ext_resource type="Script" uid="uid://einni8m0nkcs" path="res://utility/syncTileMaps.gd" id="3_fpuds"]
@@ -196,6 +197,7 @@ sources/0 = SubResource("TileSetAtlasSource_fpuds")
 size = Vector2(2492, 1507)
 
 [node name="room_02" type="Node2D" unique_id=556870023]
+script = ExtResource("1_fpuds")
 
 [node name="mirror" parent="." unique_id=1533113578 instance=ExtResource("1_t25rq")]
 position = Vector2(392, 420)
@@ -225,3 +227,5 @@ mirroredTilemap = NodePath("../../mirrored world/tilemap")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="roomArea" unique_id=80823786]
 position = Vector2(1252, 650)
 shape = SubResource("RectangleShape2D_t25rq")
+
+[connection signal="body_entered" from="roomArea" to="." method="_on_room_area_body_entered"]

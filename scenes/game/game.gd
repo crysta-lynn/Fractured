@@ -22,5 +22,8 @@ func _on_swap(is_mirrored):
 	
 	camera.position_smoothing_enabled = true
 
+func change_room():
+	
+
 func _ready() -> void:
 	WorldManager.swap.connect(_on_swap)
