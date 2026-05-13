@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://1gpqc1gqaqdl"]
 
-[ext_resource type="Script" uid="uid://dw6jmrt4uyrdc" path="res://scenes/levels/swap_map.gd" id="1_7jg3v"]
+[ext_resource type="Script" uid="uid://dw6jmrt4uyrdc" path="res://scenes/levels/rooms.gd" id="1_7jg3v"]
 [ext_resource type="PackedScene" uid="uid://dvwlnur5fvcvj" path="res://scenes/mirror/mirror.tscn" id="2_7jg3v"]
 [ext_resource type="Texture2D" uid="uid://bap86cegl2njv" path="res://assets/tiles/Dead_terrain.png" id="3_sx7cs"]
 [ext_resource type="Texture2D" uid="uid://b4ymksfn6rmis" path="res://assets/tiles/Living_terrain.png" id="4_tkhv7"]
@@ -201,13 +201,9 @@ script = ExtResource("1_7jg3v")
 
 [node name="mirror" parent="." unique_id=1533113578 instance=ExtResource("2_7jg3v")]
 position = Vector2(1030, 820)
-collision_layer = 3
-collision_mask = 3
 
 [node name="mirror2" parent="." unique_id=375213334 instance=ExtResource("2_7jg3v")]
 position = Vector2(2331, 468)
-collision_layer = 3
-collision_mask = 3
 
 [node name="mirrored world" type="Node2D" parent="." unique_id=1571105990]
 
@@ -223,9 +219,9 @@ tile_set = SubResource("TileSet_irv6j")
 script = ExtResource("5_l0g8q")
 mirroredTilemap = NodePath("../../mirrored world/tilemap")
 
-[node name="Area2D" type="Area2D" parent="." unique_id=1996176408]
+[node name="roomArea" type="Area2D" parent="." unique_id=1996176408]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=490294898]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="roomArea" unique_id=490294898]
 visible = false
 position = Vector2(1327.5, 388.5)
 shape = SubResource("RectangleShape2D_sx7cs")
