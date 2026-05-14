@@ -74,7 +74,6 @@ scale = Vector2(0.75, 0.75)
 script = ExtResource("4_kelw5")
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer/screenFade" unique_id=2081394451]
-visible = false
 modulate = Color(1, 1, 1, 0)
 anchors_preset = 15
 anchor_right = 1.0

@@ -4,7 +4,6 @@ extends Node2D
 @onready var camera = $player/Camera2D
 @onready var player = $player
 
-
 signal swap_req
 
 func _on_swap(is_mirrored):

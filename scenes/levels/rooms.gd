@@ -2,16 +2,22 @@ extends Node2D
 
 @onready var game = $"../.."
 @onready var room_area = $roomArea
-var room_bounds
+
+var room_bounds : Dictionary
+var is_active := false
 
 signal change_room(bounds)
 
 func _on_body_entered(body : Node2D):
 	if body is player:
+		is_active = true
 		room_bounds = room_area.get_room_bounds()
 		change_room.emit(room_bounds)
 
 func _on_swap_req():
+	if not is_active:
+		return
+	
 	room_bounds = room_area.get_room_bounds()
 	change_room.emit(room_bounds)
 	
