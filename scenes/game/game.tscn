@@ -65,7 +65,7 @@ script = ExtResource("1_0sr1o")
 [node name="level1" parent="." unique_id=1542735852 instance=ExtResource("2_kelw5")]
 
 [node name="player" parent="." unique_id=1333575178 instance=ExtResource("3_lfrn8")]
-position = Vector2(382, 780)
+position = Vector2(1029, 771)
 scale = Vector2(0.75, 0.75)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1796999623]
@@ -74,6 +74,7 @@ scale = Vector2(0.75, 0.75)
 script = ExtResource("4_kelw5")
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer/screenFade" unique_id=2081394451]
+visible = false
 modulate = Color(1, 1, 1, 0)
 anchors_preset = 15
 anchor_right = 1.0
